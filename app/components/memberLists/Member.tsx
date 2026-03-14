@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Reveal from "~/components/Reveal";
 import ScrambleText from "~/components/ScrambleText";
-import GradientOrb from "~/components/ui/GradientOrb";
 
 export interface TypeMember {
   readonly name: string;
@@ -35,17 +34,14 @@ export default function Members({ members }: MembersProps) {
   };
 
   const getCategoryLightColor = (_category: "software" | "cloud") =>
-    "bg-gray-50 dark:bg-gray-950/50 border-gray-300 dark:border-gray-300";
+    "bg-gray-50 border-gray-300 dark:border-gray-300";
 
   return (
     <section
       aria-labelledby="members-heading"
-      className="relative bg-white dark:bg-neutral-950 border-t border-gray-200 dark:border-neutral-800 overflow-hidden"
+      className=" h-calc(100vh - 4rem) relative py-12 bg-white dark:bg-neutral-950 border-t border-gray-200 dark:border-neutral-800 overflow-hidden"
     >
-      <GradientOrb color="blue" position="top-left" size="md" />
-      <GradientOrb color="green" position="bottom-right" size="md" />
-
-      <div className="max-w-480 mx-auto w-full sm:border-x border-gray-200 dark:border-neutral-800">
+      <div className="max-w-480 mx-auto w-full border border-gray-200 dark:border-neutral-800">
         <div className="grid grid-cols-1 lg:grid-cols-12 border-b border-gray-200 dark:border-neutral-800">
           <div className="lg:col-span-4 p-6 sm:p-12 border-b lg:border-b-0 lg:border-r border-gray-200 dark:border-neutral-800 bg-hatching relative">
             <Reveal>
