@@ -139,7 +139,7 @@ export default function TermsOfService() {
           <StaggerListItem key={section.number}>
             <section
               aria-labelledby={`terms-section-${section.number}`}
-              className="border-y border-gray-200 bg-white dark:border-neutral-800 dark:bg-neutral-950"
+              className="border-b first:border-t border-gray-200 bg-white dark:border-neutral-800 dark:bg-neutral-950"
             >
               <div className="mx-auto w-full max-w-480 sm:border-x sm:border-gray-200 sm:dark:border-neutral-800">
                 <div className="grid grid-cols-1 lg:grid-cols-12">
