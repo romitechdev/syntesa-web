@@ -19,7 +19,11 @@ interface InterestGroupsProps {
 
 export default function InterestGroups(props: InterestGroupsProps) {
   const rowsRef = useRef<HTMLDivElement>(null);
-  const isRowsInView = useInView(rowsRef, { once: true, amount: 0.1 });
+  const isRowsInView = useInView(rowsRef, {
+    once: true,
+    amount: 0.1,
+    margin: "0px 0px -50px 0px",
+  });
 
   return (
     <section

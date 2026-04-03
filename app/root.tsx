@@ -61,11 +61,16 @@ const loaderDismissScript = `
       }, remaining);
     }
 
-    if (document.fonts && document.fonts.ready) {
+    if (document.readyState === 'complete') {
+      dismiss();
+    } else if (document.fonts && document.fonts.ready) {
       document.fonts.ready.then(dismiss);
+      window.addEventListener('load', dismiss);
     } else {
       window.addEventListener('load', dismiss);
     }
+
+    setTimeout(dismiss, 3000);
   })();
 `;
 

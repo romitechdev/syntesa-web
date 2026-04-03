@@ -19,6 +19,7 @@ interface RevealProps {
   duration?: number;
   distance?: number;
   threshold?: number;
+  margin?: string;
   once?: boolean;
   className?: string;
   clipReveal?: boolean;
@@ -70,6 +71,7 @@ export default function Reveal({
   duration = 0.6,
   distance = 30,
   threshold = 0.15,
+  margin = "0px 0px -50px 0px",
   once = true,
   className,
   clipReveal = false,
@@ -77,7 +79,7 @@ export default function Reveal({
 }: RevealProps) {
   const prefersReducedMotion = usePrefersReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once, amount: threshold });
+  const isInView = useInView(ref, { once, amount: threshold, margin });
 
   const transition: Transition = {
     duration: prefersReducedMotion ? 0 : duration,
@@ -109,12 +111,18 @@ interface LineRevealProps {
   className?: string;
   delay?: number;
   duration?: number;
+  margin?: string;
 }
 
-export function LineReveal({ className = "", delay = 0, duration = 0.8 }: LineRevealProps) {
+export function LineReveal({
+  className = "",
+  delay = 0,
+  duration = 0.8,
+  margin = "0px 0px -50px 0px",
+}: LineRevealProps) {
   const prefersReducedMotion = usePrefersReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const isInView = useInView(ref, { once: true, amount: 0.5, margin });
   const active = isInView || prefersReducedMotion;
   const durationMs = duration * 1000;
   const delayMs = delay * 1000;
@@ -139,6 +147,7 @@ interface StaggerProps {
   stagger?: number;
   className?: string;
   threshold?: number;
+  margin?: string;
 }
 
 export function StaggerChildren({
@@ -146,10 +155,11 @@ export function StaggerChildren({
   stagger = 0.1,
   className,
   threshold = 0.1,
+  margin = "0px 0px -50px 0px",
 }: StaggerProps) {
   const prefersReducedMotion = usePrefersReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, amount: threshold });
+  const isInView = useInView(ref, { once: true, amount: threshold, margin });
   const controls = useAnimation();
 
   useEffect(() => {
@@ -219,6 +229,7 @@ interface StaggerListProps {
   stagger?: number;
   className?: string;
   threshold?: number;
+  margin?: string;
   as?: "ul" | "ol";
 }
 
@@ -227,12 +238,13 @@ export function StaggerList({
   stagger = 0.1,
   className,
   threshold = 0.1,
+  margin = "0px 0px -50px 0px",
   as = "ul",
 }: StaggerListProps) {
   const prefersReducedMotion = usePrefersReducedMotion();
   const Component = as === "ul" ? motion.ul : motion.ol;
   const ref = useRef<HTMLUListElement | HTMLOListElement>(null);
-  const isInView = useInView(ref, { once: true, amount: threshold });
+  const isInView = useInView(ref, { once: true, amount: threshold, margin });
   const controls = useAnimation();
 
   useEffect(() => {

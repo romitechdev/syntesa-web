@@ -20,7 +20,11 @@ interface SeniorsProps {
 export default function Seniors({ seniors }: SeniorsProps) {
   const marqueeRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
-  const isMarqueeInView = useInView(marqueeRef, { once: true, amount: 0.05 });
+  const isMarqueeInView = useInView(marqueeRef, {
+    once: true,
+    amount: 0.05,
+    margin: "0px 0px -50px 0px",
+  });
 
   const [isHovered, setIsHovered] = useState(false);
   const [isDragging, setIsDragging] = useState(false);

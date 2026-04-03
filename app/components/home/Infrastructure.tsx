@@ -18,7 +18,11 @@ interface InfrastructureProps {
 
 export default function Infrastructure({ specs }: InfrastructureProps) {
   const gridRef = useRef<HTMLDListElement>(null);
-  const isGridInView = useInView(gridRef, { once: true, amount: 0.15 });
+  const isGridInView = useInView(gridRef, {
+    once: true,
+    amount: 0.15,
+    margin: "0px 0px -50px 0px",
+  });
 
   return (
     <section
