@@ -19,3 +19,8 @@ package-lock.json
 .vscode/
 .idea/
 *.local
+
+# Playwright
+playwright-report/
+test-results/
+.playwright/
