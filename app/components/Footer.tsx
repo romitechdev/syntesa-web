@@ -149,6 +149,25 @@ export default function Footer({ socialLinks }: FooterProps) {
                       ))}
                     </ul>
                   </nav>
+
+                  <nav
+                    aria-label="Legal links"
+                    className="pt-6 border-t border-gray-200 dark:border-neutral-800"
+                  >
+                    <ul className="space-y-3">
+                      <li className="grid grid-cols-[4.5rem_minmax(0,1fr)] items-baseline gap-3">
+                        <span className="font-mono text-xs uppercase tracking-wider text-gray-400 dark:text-neutral-600">
+                          Legal
+                        </span>
+                        <Link
+                          to="/terms-of-service"
+                          className="text-sm text-gray-600 dark:text-neutral-300 hover:text-gray-900 dark:hover:text-apple-blue-400 transition-colors"
+                        >
+                          Terms of Service
+                        </Link>
+                      </li>
+                    </ul>
+                  </nav>
                 </div>
               </div>
             </div>
