@@ -38,7 +38,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
     "tailwindcss": "^4.2.4",
-    "terser": "^5.46.1",
+    "terser": "^5.46.2",
     "typescript": "^5.9.3",
     "vite": "^7.3.2",
     "vite-imagetools": "^10.0.0",
