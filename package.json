@@ -37,7 +37,7 @@
     "@types/react-dom": "^19.2.3",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
-    "tailwindcss": "^4.2.2",
+    "tailwindcss": "^4.2.4",
     "terser": "^5.46.1",
     "typescript": "^5.9.3",
     "vite": "^7.3.2",
